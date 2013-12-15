@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin:WindowBase
+	x:Class="Plugin.WPF.Example.MainWindow"
+	
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	
+	xmlns:admvvm="clr-namespace:Plugin.WPF.Dock.AvalonDockMVVM"
+	xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"
+	
+	Height="768"
+	Width="1024"
+	
+	xmlns:plugin="clr-namespace:Plugin.WPF"
+	Closing="WindowBase_Closing"
+	WindowStartupLocation="CenterOwner">
+	<plugin:WindowBase.Resources>
+		<DataTemplate  DataType="{x:Type plugin:IPluginUserControl}"
+		>
+			<ad:DockableContent
+				Title="{Binding Label}"
+				ToolTip="{Binding Label}"
+				Content="{Binding}"
+				IsCloseable="True"
+				admvvm:AvalonDockHost.IsPaneVisible="{Binding Visible}"
+			>
+			</ad:DockableContent>
+		
+		</DataTemplate>
+		<Style x:Key="MenuItemStyle">
+			<Setter Property="MenuItem.Header" Value="{Binding Label}"/>
+			<Setter Property="MenuItem.ItemsSource" Value="{Binding MenuItems}"/>
+			<Setter Property="MenuItem.Command" Value="{Binding Command}" />
+		</Style>
+		
+	</plugin:WindowBase.Resources>
+	<DockPanel Background="White">
+		<Menu
+			DockPanel.Dock="Top"
+			Height="23"
+			HorizontalAlignment="Stretch"
+			Margin="0,0,0,0"
+			Name="menu"
+			VerticalAlignment="Top"
+			Background="Transparent"
+			ItemsSource="{Binding MenuItems}"
+			ItemContainerStyle="{StaticResource MenuItemStyle}"
+		>
+		</Menu>
+		<StatusBar
+			DockPanel.Dock="Bottom"
+			Height="26">
+			<StatusBarItem>
+				<StackPanel
+					Orientation="Horizontal">
+					<TextBlock
+						Text="A"
+						VerticalAlignment="Center" />
+					<Slider
+						x:Name="zoomSlider"
+						VerticalAlignment="Center"
+						Value="1"
+						IsSnapToTickEnabled="True"
+						TickFrequency="0.2"
+						TickPlacement="Both"
+						Minimum="0.5"
+						Maximum="3"
+						SmallChange="0.5"
+						LargeChange="0.5"
+						Width="100" />
+					<TextBlock
+						Text="A"
+						FontSize="20"
+						VerticalAlignment="Center" />
+				</StackPanel>
+			</StatusBarItem>
+		</StatusBar>
+		<admvvm:AvalonDockHost
+			x:Name="dockHost"
+			Panes="{Binding Controls}"
+			Documents="{Binding Documents}"
+			
+			AvalonDockLoaded="DockHost_AvalonDockLoaded1"
+		>
+			<admvvm:AvalonDockHost.LayoutTransform>
+				<ScaleTransform
+					ScaleX="{Binding Value, ElementName=zoomSlider}"
+					ScaleY="{Binding Value, ElementName=zoomSlider}" />
+			</admvvm:AvalonDockHost.LayoutTransform>
+		</admvvm:AvalonDockHost>
+		
+	</DockPanel>
+</plugin:WindowBase> 

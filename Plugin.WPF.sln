@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.4
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin.WPF", "Plugin.WPF.csproj", "{25187AAB-B676-43CC-9799-AA950A8B65EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plugin", "..\Plugin\Plugin.csproj", "{30ED6F7A-E53D-423F-A360-8E6203765F7F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Debug|x86.Build.0 = Debug|x86
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Debug|x86.ActiveCfg = Debug|x86
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Release|x86.Build.0 = Release|x86
+		{25187AAB-B676-43CC-9799-AA950A8B65EC}.Release|x86.ActiveCfg = Release|x86
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Debug|x86.Build.0 = Debug|x86
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Debug|x86.ActiveCfg = Debug|x86
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Release|x86.Build.0 = Release|x86
+		{30ED6F7A-E53D-423F-A360-8E6203765F7F}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal
